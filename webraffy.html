@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raffy Lawangon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Global Style */
+    section {
+      min-height: 100vh;
+      padding: 60px 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1, h2, p {
+      text-align: center;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff6b6b;
+    }
+
+    /* Landing Section */
+    #home {
+      background: linear-gradient(135deg, #5f2c82, #49a09d);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #home h1 {
+      font-size: 60px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    #home h2 {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    #home button {
+      padding: 15px 30px;
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #home button:hover {
+      background-color: #e64a4a;
+    }
+
+    /* About Section */
+    #about {
+      background: #f2f2f2;
+      color: #333;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #about h2 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    /* Skills Section */
+    #skills {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      color: white;
+      text-align: center;
+      animation: zoomIn 1s ease-in-out;
+    }
+
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    #skills h2 {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
+    .skills-container {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1000px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .skill-box {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 10px;
+      width: 200px;
+      margin: 15px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-10px);
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .skill-box h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: #ffffff;
+      color: #333;
+    }
+
+    #contact h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      max-width: 600px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: #ff6b6b;
+    }
+
+    .contact-form button {
+      padding: 15px 30px;
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #e64a4a;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Landing Section -->
+  <section id="home">
+    <h1>Raffy Lawangon</h1>
+    <h2>Full Stack Developer & Designer</h2>
+    <button>Learn More</button>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Raffy Lawangon, a passionate full-stack developer with a love for crafting dynamic websites and creating stunning user experiences. With a background in both front-end and back-end technologies, I build highly functional, responsive, and visually appealing applications.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-box">
+        <h3>HTML</h3>
+      </div>
+      <div class="skill-box">
+        <h3>CSS</h3>
+      </div>
+      <div class="skill-box">
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-box">
+        <h3>React</h3>
+      </div>
+      <div class="skill-box">
+        <h3>Node.js</h3>
+      </div>
+      <div class="skill-box">
+        <h3>Python</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Raffy Lawangon. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Scroll animation for "Learn More" button
+    document.querySelector("#home button").addEventListener("click", function() {
+      document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
